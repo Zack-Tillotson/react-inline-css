@@ -1,7 +1,7 @@
 {
   "name": "zt-react-inline-css",
   "description": "Inline CSS in your React components, namespaced automatically, supports passing the className prop.",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
