@@ -33,10 +33,11 @@ var InlineCss = React.createClass({
 		var namespace     = this.props.namespace || "InlineCss-" + refCounter++;
 		var stylesheet    = this._transformSheet(this.props.stylesheet, componentName, namespace);
 		var Wrapper       = this.props.wrapper || "div";
+		var className     = this.props.className || "";
 
 		return React.createElement(
 			Wrapper,
-			{id: namespace},
+			{id: namespace, className: className},
 			this.props.children,
 			React.createElement("style", {
 				scoped:                  true,
