@@ -16,6 +16,9 @@ var InlineCss = React.createClass({
 		stylesheet: React.PropTypes.string.isRequired,
 		wrapper: React.PropTypes.string
 	},
+	getInitialState: function() {
+		return {refCount: refCounter++};
+	},
 	_transformSheet: function (stylesheet, componentName, namespace) {
 		return stylesheet.
 			// Prettier output.
@@ -30,7 +33,7 @@ var InlineCss = React.createClass({
 	},
 	render: function () {
 		var componentName = this.props.componentName || "&";
-		var namespace     = this.props.namespace || "InlineCss-" + refCounter++;
+		var namespace     = this.props.namespace || "InlineCss-" + this.state.refCount;
 		var stylesheet    = this._transformSheet(this.props.stylesheet, componentName, namespace);
 		var Wrapper       = this.props.wrapper || "div";
 		var className     = this.props.className || "";
