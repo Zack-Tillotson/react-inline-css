@@ -48,24 +48,4 @@ const Main = React.createClass({
 	}
 });
 
-const Container = React.createClass({
-	getInitialState() {
-		return {
-			count: 0
-		}
-	},
-	clickHandler() {
-		this.setState({count: this.state.count+1});
-	},
-	render () {
-		return (
-			<div>
-				<div onClick={this.clickHandler}>Click Me!</div>
-				<div>{this.state.count}</div>
-				<Main />
-			</div>
-		);
-	}
-});
-
-ReactDOM.render(<Container />, document.getElementById("react-root"));
+ReactDOM.render(<Main />, document.getElementById("react-root"));
