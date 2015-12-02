@@ -29,8 +29,11 @@ var InlineCss = React.createClass({
 				}
 			);
 	},
+	componentWillMount: function() {
+		this.uniqueRef = refCounter++;
+	},
 	render: function () {
-		var namespace     = this.props.namespace || "InlineCss-" + refCounter++;
+		var namespace     = this.props.namespace || "InlineCss-" + this.uniqueRef;
 		var componentName = this.props.componentName || "&";
 		var stylesheet    = this._transformSheet(this.props.stylesheet, componentName, namespace);
 		var Wrapper       = this.props.wrapper || "div";
